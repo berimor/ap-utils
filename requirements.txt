@@ -1,0 +1,2 @@
+isodate==0.5.0
+PyYAML==3.10
