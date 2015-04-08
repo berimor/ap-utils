@@ -70,19 +70,35 @@ class YamlSection(object):
 
     def get_section(self, name):
         """Returns given section."""
-        section = self.get(name)
-        if type(section) != YamlSection:
+        value = self.get(name)
+        if type(value) != YamlSection:
             raise ValueError("Value '{0}' is not a section.".format(name))
 
-        return section
+        return value
 
     def get_optional_section(self, name):
-        """Returns given section."""
-        section = self.get_optional(name, None)
-        if section and type(section) != YamlSection:
+        """Returns given optional section."""
+        value = self.get_optional(name, None)
+        if value and type(value) != YamlSection:
             raise ValueError("Value '{0}' is not a section.".format(name))
 
-        return section
+        return value
+
+    def get_list(self, name):
+        """Returns given list."""
+        value = self.get(name)
+        if type(value) != list:
+            raise ValueError("Value '{0}' is not a list.".format(name))
+
+        return value
+
+    def get_optional_list(self, name):
+        """Returns given optional list."""
+        value = self.get_optional(name, [])
+        if value and type(value) != list:
+            raise ValueError("Value '{0}' is not a list.".format(name))
+
+        return value
 
     def _transform(self, value):
         if type(value) == dict:
