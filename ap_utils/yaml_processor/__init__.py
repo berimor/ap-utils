@@ -1,3 +1,3 @@
-from yaml_processor import YamlProcessor
+from .yaml_processor import YamlProcessor
 
 __author__ = 'Alexander Pikovsky'

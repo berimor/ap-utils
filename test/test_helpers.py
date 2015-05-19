@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-import calendar
 
 import unittest
 
 __author__ = 'Alexander Pikovsky'
-
 
 
 class Test(unittest.TestCase):
@@ -13,6 +11,9 @@ class Test(unittest.TestCase):
         pass
 
     def tearDown(self):
+        pass
+
+    def test_a(self):
         pass
 
 
